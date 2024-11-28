@@ -140,7 +140,7 @@ const LoginSignUp = () => {
                         </div>
                     </div>
                     <div className="login-forgot-password">
-                        Forgot password <span className='login-clickhere'>click here</span>
+                        {/* Forgot password <span className='login-clickhere'>click here</span> */}
                         <div className='login-submit-outer'>
                             <button 
                                 type="submit" 
@@ -151,7 +151,7 @@ const LoginSignUp = () => {
                             </button>
                             <p className="login-submit">Login</p>
                         </div>
-                    </div>
+                    </div> 
                 </form>
             </div>
         </div>
