@@ -1,5 +1,3 @@
-
-/* Base Styles */
 .login-container {
     display: flex;
     justify-content: center;
@@ -160,51 +158,3 @@ html, body {
         margin: 0.25rem 0;
     }
 }
-
-/* .Container{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: azure;
-    border: 1px solid black;
-    border-radius: 10px;
-    
-}
-.Container-1{
-    width: 50%;
-    background-color: aqua;
-    border-radius: 10px;
-}
-.Container-2{
-    width: 50%;
-    background-color: red;
-    border-radius: 10px;
-}
-.submit-outer{
-    margin-left: 40%;
-    display: flex;
-}
-
-.submit{
-   margin: 10px;
-}
-
-.input-fields {
-    gap: 10px;
-    line-height: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.clickhere{
-    cursor: pointer;
-}
-.clickhere:hover{
-    color: blue;
-}
-
-.signUpbutton{
-    
-    border: none;
-} */
