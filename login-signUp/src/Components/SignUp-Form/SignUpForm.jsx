@@ -1,7 +1,9 @@
-import  { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useState } from 'react';
 import './SignUpForm.css';
 
 const SignUpForm = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         mobile: '',
@@ -73,71 +75,80 @@ const SignUpForm = () => {
                         <div className="login-underline"></div>
                     </div>
                     <div className="login-inputs">
-                        <div className='login-input-fields'>
-                            <div className="login-input">
-                                <input 
-                                    type="text" 
-                                    name="name"
-                                    placeholder='Enter Your Name'
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    required 
-                                />
-                            </div>
-                            <div className="login-input">
-                                <input 
-                                    type="tel" 
-                                    name="mobile"
-                                    placeholder='Enter Your Mobile Number'
-                                    value={formData.mobile}
-                                    onChange={handleChange}
-                                    pattern="[0-9]{10}"
-                                    required 
-                                />
-                            </div>
-                            <div className="login-input">
-                                <input 
-                                    type="text" 
-                                    name="address"
-                                    placeholder='Enter Your Address'
-                                    value={formData.address}
-                                    onChange={handleChange}
-                                    required 
-                                />
-                            </div>
-                            <div className="login-input">
-                                <input 
-                                    type="email" 
-                                    name="email"
-                                    placeholder='Enter Email'
-                                    value={formData.email}
-                                    onChange={handleChange}
-                                    required 
-                                />
-                            </div>
-                            <div className="login-input">
-                                <input 
-                                    type="password" 
-                                    name="password"
-                                    placeholder='Enter New Password'
-                                    value={formData.password}
-                                    onChange={handleChange}
-                                    minLength="8"
-                                    required 
-                                />
-                            </div>
-                            <div className="login-input">
-                                <input 
-                                    type="password" 
-                                    name="confirmPassword"
-                                    placeholder='Re-enter Password'
-                                    value={formData.confirmPassword}
-                                    onChange={handleChange}
-                                    minLength="8"
-                                    required 
-                                />
-                            </div>
+                    <div className='login-input-fields'>
+                     <div className="login-input">
+                         <input 
+                            type="text" 
+                            name="name"
+                            placeholder='Enter Your Name'
+                            value={formData.name}
+                            onChange={handleChange}
+                            pattern="^[a-zA-Z\s]{3,}+$"  // Allows only alphabets and spaces
+                            title="Name should only contain alphabets and spaces."
+                            required 
+                        />
                         </div>
+                            <div className="login-input">
+                        <input  
+                            type="tel" 
+                            name="mobile"
+                            placeholder='Enter Your Mobile Number'
+                            value={formData.mobile}
+                            onChange={handleChange}
+                            pattern="^[0-9]{10}$"  // Ensures exactly 10 digits
+                            title="Mobile number must be 10 digits."
+                            required 
+                        />
+                        </div>
+                    <div className="login-input">
+                        <input 
+                            type="text" 
+                            name="address"
+                            placeholder='Enter Your Address'
+                            value={formData.address}
+                            onChange={handleChange}
+                            pattern="^.{5,}$"  // Minimum 5 characters
+                            title="Address should be at least 5 characters long."
+                            required 
+                        />
+                    </div>
+                    <div className="login-input">
+                        <input 
+                            type="email" 
+                            name="email"
+                            placeholder='Enter Email'
+                            value={formData.email}
+                            onChange={handleChange}
+                            title="Please enter a valid email address."
+                            required 
+                        />
+                    </div>
+                    <div className="login-input">
+                        <input 
+                            type="password" 
+                            name="password"
+                            placeholder='Enter New Password'
+                            value={formData.password}
+                            onChange={handleChange}
+                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"  // Minimum 8 characters, at least one letter and one number
+                            title="Password must be at least 8 characters long and include at least one letter and one number."
+                            required 
+                        />
+                    </div>
+                    <div className="login-input">
+                        <input 
+                            type="password" 
+                            name="confirmPassword"
+                            placeholder='Re-enter Password'
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"  // Same pattern as the password
+                            title="Passwords must match and meet the same requirements as above."
+                            required 
+                        />
+                    </div>
+                </div>
+
                     </div>
                     <div className="login-forgot-password">
                         {/* Forgot password <span className='login-clickhere'>click here</span> */}
@@ -149,7 +160,24 @@ const SignUpForm = () => {
                             >
                                 Sign Up
                             </button>
-                            <p className="login-submit">Login</p>
+
+                            <button
+                                type="button" // Change type to button to avoid form submission
+                                className="login-submit"
+                                onClick={() => navigate('/login')} // Navigate to the login page
+                            >
+                                Login
+                            </button>
+
+
+                            {/* <button 
+                                type="button"   
+                                // id='login-signUpbutton' 
+                                className="login-submit"   
+                            >
+                                Login
+                            </button> */}
+                            {/* <p className="login-submit">Login</p> */}
                         </div>
                     </div> 
                 </form>

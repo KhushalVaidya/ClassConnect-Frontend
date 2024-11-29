@@ -1,7 +1,9 @@
-import  { useState } from 'react';
-import './LoginForm.css';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import './Loginform.css';
 
 const LoginForm = () => {
+    const navigate = useNavigate(); // Initialize the navigation hook
     const [formData, setFormData] = useState({
        
         mobile_Email: '',
@@ -37,14 +39,14 @@ const LoginForm = () => {
 
             if (response.ok) {
                 // const result = await response.json();
-                alert('Sign Up Successful!');
+                alert('Login Successful!');
                 // Handle successful signup (e.g., redirect, clear form)
             } else {
                 const errorData = await response.json();
-                alert(`Signup Failed: ${errorData.message}`);
+                alert(`Login Failed: ${errorData.message}`);
             }
         } catch (error) {
-            console.error('Signup Error:', error);
+            console.error('Login Error:', error);
             alert('An error occurred during signup');
         }
     };
@@ -97,14 +99,22 @@ const LoginForm = () => {
                     <div className="login-forgot-password">
                         Forgot password <span className='login-clickhere'>click here</span>
                         <div className='login-submit-outer'>
-                            <button 
-                                type="submit" 
+                        <button
+                                type="button"
                                 id='login-signUpbutton' 
                                 className="login-submit"
+                                onClick={() => navigate('/')} // Navigate to the Sign Up page
                             >
                                 Sign Up
                             </button>
-                            <p className="login-submit">Login</p>
+
+                            <button
+                                type="submit"
+                                className="login-submit"
+                            >
+                                Login
+                            </button>
+                            {/* <p className="login-submit">Login</p> */}
                         </div>
                     </div>
                 </form>

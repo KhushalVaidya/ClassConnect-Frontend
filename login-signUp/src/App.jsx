@@ -1,16 +1,32 @@
-import './App.css';
+// import './App.css';
+// import SignUpForm from "./Components/SignUp-Form/SignUpForm.jsx";
+// import LoginForm from './Components/Login-Form/LoginForm.jsx';
+
+// function App() {
+//  return (
+//  <div>
+//     <SignUpForm/>
+//     <LoginForm/>
+//  </div>  
+//  );
+// }
+// export default App
+
+
+// import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SignUpForm from "./Components/SignUp-Form/SignUpForm.jsx";
-import SignUpForm from './Components/Login-Form/LoginForm.js';
+import LoginForm from './Components/Login-Form/LoginForm.jsx';
 
 function App() {
- return (
- <div>
-    <SignUpForm/>
-    <SignUpForm/>
-
- </div>
-    
- );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignUpForm />} />
+        <Route path="/login" element={<LoginForm />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
