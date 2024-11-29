@@ -83,7 +83,7 @@ const SignUpForm = () => {
                             placeholder='Enter Your Name'
                             value={formData.name}
                             onChange={handleChange}
-                            pattern="^[a-zA-Z\s]{3,}+$"  // Allows only alphabets and spaces
+                            pattern="^[a-zA-Z\s]{3,}$"  // Allows only alphabets and spaces
                             title="Name should only contain alphabets and spaces."
                             required 
                         />
