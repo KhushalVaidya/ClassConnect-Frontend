@@ -1,6 +1,5 @@
-
 /* Base Styles */
-.login-container {
+.signUp-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,7 +15,7 @@
     border: 0.5px solid rgb(181, 181, 181);
 }   
 
-.login-illustration-container {
+.signUp-illustration-container {
     flex: 1;
     max-width: 50%;
     display: flex;
@@ -25,14 +24,14 @@
     padding: 1rem;
 }
 
-.login-illustration-container img {
+.signUp-illustration-container img {
     max-width: 100%;
     max-height: 400px;
     height: auto;
     object-fit: contain;
 }
 
-.login-form-container {
+.signUp-form-container {
     flex: 1;
     max-width: 50%;
     padding: 1rem;
@@ -47,23 +46,23 @@ form {
     max-width: 350px;
 }
 
-.login-header {
+.signUp-header {
     text-align: center;
     margin-bottom: 1rem;
 }
 
-.login-header h1 {
+.signUp-header h1 {
     margin: 0;
     font-size: 1.5rem;
 }
 
-.login-input-fields {
+.signUp-input-fields {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
-.login-input input {
+.signUp-input input {
     width: 100%;
     padding: 0.5rem;
     margin: 0.25rem 0;
@@ -72,14 +71,14 @@ form {
     font-size: 0.9rem;
 }
 
-.login-submit-outer {
+.signUp-submit-outer {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 0.5rem;
 }
 
-.login-submit {
+.signUp-submit {
     padding: 0.5rem 1rem;
     margin: 0 0.25rem;
     border: none;
@@ -90,29 +89,29 @@ form {
     text-align: center;
 }
 
-#login-signUpbutton {
+#signUp-signUpbutton {
     background-color: #4CAF50;
     color: white;
 }
 
-.login-submit:last-child {
-    background-color: #2196F3;
+.signUp-submit:last-child {
+    background-color: #6c63ff;
     color: white;
 }
 
-.login-forgot-password {
+.signUp-forgot-password {
     text-align: center;
     margin: 0.5rem 0;
     font-size: 0.8rem;
 }
 
-.login-clickhere {
+.signUp-clickhere {
     color: #2196F3;
     cursor: pointer;
     margin-left: 0.25rem;
 }
 
-.login-clickhere:hover {
+.signUp-clickhere:hover {
     text-decoration: underline;
 }
 
@@ -124,87 +123,39 @@ html, body {
 
 /* Responsive Styles */
 @media screen and (max-width: 1024px) {
-    .login-container {
+    .signUp-container {
         flex-direction: column;
         width: 95vw;
         max-height: 800px;
         height: 90vh;
     }
 
-    .login-illustration-container,
-    .login-form-container {
+    .signUp-illustration-container,
+    .signUp-form-container {
         max-width: 100%;
         width: 100%;
         max-height: 50%;
     }
 
-    .login-illustration-container img {
+    .signUp-illustration-container img {
         max-height: 250px;
     }
 }
 
 @media screen and (max-width: 600px) {
-    .login-container {
+    .signUp-container {
         width: 100vw;
         height: 100vh;
         margin: 0;
         border-radius: 0;
     }
 
-    .login-submit-outer {
+    .signUp-submit-outer {
         flex-direction: column;
     }
 
-    .login-submit {
+    .signUp-submit {
         width: 100%;
         margin: 0.25rem 0;
     }
 }
-
-/* .Container{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-    background-color: azure;
-    border: 1px solid black;
-    border-radius: 10px;
-    
-}
-.Container-1{
-    width: 50%;
-    background-color: aqua;
-    border-radius: 10px;
-}
-.Container-2{
-    width: 50%;
-    background-color: red;
-    border-radius: 10px;
-}
-.submit-outer{
-    margin-left: 40%;
-    display: flex;
-}
-
-.submit{
-   margin: 10px;
-}
-
-.input-fields {
-    gap: 10px;
-    line-height: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.clickhere{
-    cursor: pointer;
-}
-.clickhere:hover{
-    color: blue;
-}
-
-.signUpbutton{
-    
-    border: none;
-} */

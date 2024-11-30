@@ -10,12 +10,19 @@ const LoginForm = () => {
         password: '',
         
     });
+
+    const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
+
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(prevState => ({
             ...prevState,
             [name]: value
         }));
+    };
+
+    const togglePasswordVisibility = () => {
+        setShowPassword(prevState => !prevState);
     };
 
     const handleSubmit = async (e) => {
@@ -84,7 +91,7 @@ const LoginForm = () => {
                            
                             <div className="login-input">
                                 <input 
-                                    type="password" 
+                                    type={showPassword ? "text" : "password"} 
                                     name="password"
                                     placeholder='Enter Password'
                                     value={formData.password}
@@ -92,6 +99,14 @@ const LoginForm = () => {
                                     minLength="8"
                                     required 
                                 />
+                                <span
+                                    className="toggle-password-icon"
+                                    onClick={togglePasswordVisibility}
+                                    role="button"
+                                    aria-label={showPassword ? "Hide password" : "Show password"}
+                                >
+                                    {showPassword ? "🙈" : "👁️"} {/* Replace with actual icons if preferred */}
+                                </span>
                             </div>
                             
                         </div>

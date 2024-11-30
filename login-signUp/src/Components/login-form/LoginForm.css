@@ -62,12 +62,13 @@ form {
 }
 
 .login-input input {
-    width: 100%;
+    width: 80%;
     padding: 0.5rem;
     margin: 0.25rem 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 0.9rem;
+    margin-left: 25px;
 }
 
 .login-submit-outer {
@@ -94,7 +95,7 @@ form {
 }
 
 .login-submit:last-child {
-    background-color: #2196F3;
+    background-color:#6c63ff;
     color: white;
 }
 
